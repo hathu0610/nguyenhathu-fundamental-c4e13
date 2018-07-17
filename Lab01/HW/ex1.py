@@ -20,12 +20,12 @@ html_content = """
 ly_do = ["em thích nghỉ", "em chán học", "cần đi uống trà sữa"]
 html_tosend = html_content.replace("{{sickness}}", random.choice(ly_do))
 msg = Message("Em nghỉ", to= 'hathu0610@gmail.com', html =html_tosend)
-now = datetime.now()
 
 loop = True
 
 while loop:
-    if now.hour == 7:
+    now = datetime.now()
+    if now.hour == 15:
         gmail.send(msg)
         break
     
