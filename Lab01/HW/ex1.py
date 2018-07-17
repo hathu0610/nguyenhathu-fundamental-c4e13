@@ -25,7 +25,7 @@ loop = True
 
 while loop:
     now = datetime.now()
-    if now.hour == 15:
+    if now.hour == 7:
         gmail.send(msg)
         break
     
