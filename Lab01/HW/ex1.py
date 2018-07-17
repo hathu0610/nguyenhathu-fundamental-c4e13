@@ -2,7 +2,7 @@ from gmail import GMail, Message
 import random
 from datetime import datetime, timedelta
 import time,threading
-gmail = GMail('hathunguyen10061999@gmail.com','Thu,1999')
+gmail = GMail('hathu0610@gmail.com','tuantran1995')
 
 
 
@@ -20,20 +20,12 @@ html_content = """
 ly_do = ["em thích nghỉ", "em chán học", "cần đi uống trà sữa"]
 html_tosend = html_content.replace("{{sickness}}", random.choice(ly_do))
 msg = Message("Em nghỉ", to= 'hathu0610@gmail.com', html =html_tosend)
-now = datetime.now().hour
+now = datetime.now()
 
-if now.hour > 7:
-    delay = timedelta(hours=(24 - now.hour +7)).total_seconds()
-    def foo():
+loop = True
+
+while loop:
+    if now.hour == 7:
         gmail.send(msg)
-    t = threading.Timer(delay, foo)
-    t.start()
-elif now.hour < 7:
-    delay = timedelta(hours=(7 - now.hour)).total_seconds()
-    def foo():
-        gmail.send(msg)
-    t = threading.Timer(delay, foo)
-    t.start()
-elif now.hour == 7:
-    gmail.send(msg)
+        break
     
