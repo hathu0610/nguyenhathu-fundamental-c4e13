@@ -48,4 +48,4 @@ for li in li_list:
    
 # 4. Save data to excel 
 print(new_list)
-pyexcel.save_as(records=new_list, dest_file_name="new_file.xlsx")
+
