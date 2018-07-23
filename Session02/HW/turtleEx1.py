@@ -17,9 +17,4 @@ for i in range (4):
     right(150)
     right(90)
 
-    
-    
-
-
-
 mainloop()
