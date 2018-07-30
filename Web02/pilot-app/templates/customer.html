@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <titlle></titlle>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    {% for customer in all_customer%}
+    <div>
+        <b>Ten: {{customer.name}}</b>
+        <p>Gioi tinh:
+            {% if customer.gender == 1 %}
+                Nam
+            {% else %}
+                Nu
+            {% endif %}
+        </p>
+        <p>Email: {{customer.email}}</p>
+        <p>Cong viec: {{customer.job}}</p>
+        <p>Cong ty: {{customer.company}}</p>
+        <p>Tinh trang lien he: 
+            {% if customer.contacted == True %}
+            roi
+            {% else %}
+            chua
+            {% endif %}
+        </p>
+        <hr>
+    </div>
+    {% endfor %}
+</body>
+</html>
