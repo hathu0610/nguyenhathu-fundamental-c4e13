@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mua dong k lanh</title>
+   
+</head>
+<body>
+    <h1>Admin page</h1>
+    <table border="1px">
+        <thdead>
+            <th>STT</th>
+            <th> Name </th>
+            <th> Yob </th>
+            <th> Gender </th>
+            <th></th>
+
+        </thdead>
+        <tbody>
+            {% for service in all_service %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ service.name }}</td>
+                <td>{{ service.yob }}</td>
+                <td>
+                {% if service.gender == 0 %}
+                Nam 
+                {% else %}
+                Nu
+                {% endif %}
+                </td>
+               <td>
+                   <a href="{{  url_for('updatenew', service_id = service.id) }}" >Sua</a>
+                   <a href="{{  url_for('delete', service_id = service.id) }}">Xoa</a>
+               </td>
+            </tr>
+            {% endfor %}
+        </tbody>  
+    </table>
+
+</body>
+</html>
