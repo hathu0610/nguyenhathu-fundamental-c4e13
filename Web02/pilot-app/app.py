@@ -1,10 +1,14 @@
 from flask import *
 # from mongoengine import *
 import mlab
+from datetime import *
 from models.service import Service
 from models.customer import Customer
+from models.user import User
+from models.order import Order
+from flask_mail import Message
 app = Flask(__name__)
-
+app.secret_key = 'a secrey key'
 mlab.connect()
 
 # design database
@@ -26,8 +30,12 @@ def anothersearch():
 
 @app.route('/detail/<service_id>')
 def detail(service_id):
-    service = Service.objects.with_id(service_id)
-    return render_template('detail.html', service = service)
+    if 'logged_in' in session: 
+        if session['logged_in']:
+            service = Service.objects.with_id(service_id)
+            return render_template('detail.html', service = service)
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/customer')
@@ -98,6 +106,96 @@ def updatenew(service_id):
 
         return redirect(url_for('admin'))
 
+
+
+@app.route('/sign-in', methods = ["GET", "POST"])
+def signin():
+    if request.method == "GET":
+        return render_template('signin.html')
+    elif request.method == "POST":
+        form = request.form
+        fullname = form['fullname']
+        email = form['email']
+        username = form['username']
+        password = form['password']
+        
+        new_user = User(
+            fullname = fullname,
+            email = email,
+            username = username,
+            password = password
+        )
+        new_user.save()
+        return redirect(url_for('anothersearch'))
+
+@app.route('/login', methods = ["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template('login.html')
+    elif request.method == "POST":
+        form = request.form
+        username = form['username']
+        password = form['password']
+
+        users = User.objects(username = username, password = password)
+
+
+        if not users:
+            return "Sai tên đăng nhập hoặc mk rồi nha"
+        else:
+            session['user_name'] = username
+            session['logged_in'] = True
+            return redirect(url_for('anothersearch'))
+
+@app.route('/servicerequest/<service_id>')
+def servicerequest(service_id):
+
+    currentime= datetime.now()
+
+    userid = session.get('user_name')
+
+    service_req = Order (
+        serviceid = service_id,
+        userid = userid,
+        currentime = currentime,
+        is_accepted= False
+    )
+
+    service_req.save()
+    return "Đã gửi yêu cầu!"   
+
+@app.route('/logout')
+def logout():
+    del session['logged_in']
+    return redirect(url_for('index'))
+
+@app.route('/order/')
+def order():
+    orders = Order.objects(is_accepted = False)
+    the_list = []
+
+    for order in orders:
+        service_id = order['serviceid']
+        user_id = order['userid']
+        service = Service.objects.with_id(service_id)
+        user = User.objects(username = user_id).first()
+        the_key = {
+        "servicename" : service['name'], 
+        "username" : user['fullname'],
+        "time" : order['currentime'].replace(second=0, microsecond=0),
+        "orderid": order['id']
+        }
+        the_list.append(the_key)
+    
+    return render_template('order.html', the_list = the_list)
+
+@app.route('/accept/<orderid>')
+def accept(orderid):
+    order = Order.objects.with_id(orderid)
+    order['is_accepted'] = True
+    order.save()
+    return redirect(url_for('order'))
+      
 if __name__ == '__main__':
   app.run(debug=True)
  

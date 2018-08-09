@@ -31,13 +31,15 @@
                 {% endif %}
                 </td>
                <td>
-                   <a href="{{  url_for('updatenew', service_id = service.id) }}" >Sua</a>
+                   <a href="{{  url_for('updatenew', service_id = service.id) }}" >Sua</a> 
                    <a href="{{  url_for('delete', service_id = service.id) }}">Xoa</a>
                </td>
             </tr>
             {% endfor %}
         </tbody>  
     </table>
+
+    <a href="{{  url_for('order') }}" >Xem yêu cầu các dịch vụ</a>
 
 </body>
 </html>

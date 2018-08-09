@@ -16,5 +16,7 @@
         <p>Địa chỉ: {{service.address}} </p>
         <p>Mô tả: {{service.description}} </p>
         <p>Số đo 3 vòng: {{service.measurements}} </p>
+        <a href="{{  url_for('servicerequest', service_id = service.id) }}" >Yêu cầu dịch vụ</a>
+
 </body>
 </html>

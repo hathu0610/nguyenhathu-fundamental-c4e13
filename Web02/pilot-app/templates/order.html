@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order</title>
+
+</head>
+<body>
+        <h1>Danh sách yêu cầu </h1>
+        <table border="1px">
+                <thdead>
+                    <th>STT</th>
+                    <th> Đối tác </th>
+                    <th> Người dùng</th>
+                    <th> Thời gian yêu cầu </th>
+                    <th></th>
+        
+                </thdead>
+                <tbody>
+                    {% for list in the_list %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ list.servicename }}</td>
+                        <td>{{ list.username }}</td>
+                        <td>{{ list.time }}</td>
+                       <td>
+                           <a href="{{  url_for('accept', orderid = list.orderid) }}" >Phe duyet yeu cau </a>
+                       </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>  
+            </table>
+       
+</body>
+</html>

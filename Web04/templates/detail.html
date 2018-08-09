@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CMS App</title>
+
+</head>
+<body>
+    <h1>Video detail</h1>
+    <a href="{{ url_for('index')}}">Ve trang chu</a>
+    <br>
+    <iframe 
+    width="1155" 
+    height="538" 
+    src="https://www.youtube.com/embed/{{youtubeid}}" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen></iframe>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body>
+    <h1>Trang chu</h1>
+    <a href="{{  url_for('login') }}">Dang nhap</a>
+    <hr>
+    {% for video in videos %}
+    <div>
+        <img src="{{ video.thumbnail }}" alt="" width="220px" height = "120px">
+        <p>{{ video.title }}</p>
+        <span>{{ video.views }} views</span>
+        <a href="{{  url_for('detail', youtubeid = video.youtubeid) }}">Xem</a>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>
