@@ -152,7 +152,7 @@ def servicerequest(service_id):
 
     currentime= datetime.now()
 
-    userid = session.get('user_name')
+    userid = session['user_id']
 
     service_req = Order (
         serviceid = service_id,
@@ -178,7 +178,7 @@ def order():
         service_id = order['serviceid']
         user_id = order['userid']
         service = Service.objects.with_id(service_id)
-        user = User.objects(username = user_id).first()
+        user = User.objects.with_id(user_id)
         the_key = {
         "servicename" : service['name'], 
         "username" : user['fullname'],
@@ -192,8 +192,10 @@ def order():
 @app.route('/accept/<orderid>')
 def accept(orderid):
     order = Order.objects.with_id(orderid)
+
     order['is_accepted'] = True
     order.save()
+
     return redirect(url_for('order'))
       
 if __name__ == '__main__':
