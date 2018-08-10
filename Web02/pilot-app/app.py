@@ -143,7 +143,7 @@ def login():
         if not users:
             return "Sai tên đăng nhập hoặc mk rồi nha"
         else:
-            session['user_name'] = username
+            session['user_id'] = str(users[0].id)
             session['logged_in'] = True
             return redirect(url_for('anothersearch'))
 
