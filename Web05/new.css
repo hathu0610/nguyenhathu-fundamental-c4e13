@@ -1,0 +1,57 @@
+.bg-pink{
+    background-color: pink;
+}
+.bg-blue{
+    background-color: blue;
+}
+.bg-yellow{
+    background-color: yellow;
+}
+.bg-orange{
+    background-color: orange;
+}
+.bg-brown{
+    background-color: brown;
+}
+
+#left-box{
+    float:left;
+    padding: 0px 0px 0px 10px 
+}
+.w-200px{
+    width: 300px;
+}
+.h-50px{
+    height: 50px;
+}
+.h-400px{
+    height: 400px;
+}
+.d-inline-block{
+    display: inline-block;
+}
+#right-box{
+    float:right;
+}
+
+#upper-box{
+    padding: 10px 0px 10px 0px ;
+}
+#inner-div{
+    width: 300px;
+    height: 50px;
+    background-color: orange;
+}
+#inner-div1{
+    width: 300px;
+    height: 50px;
+    background-color: orange;
+    float: right;
+}
+
+#inner-div2{
+    width: 150px;
+    height: 50px;
+    background-color: orange;
+    margin: 10px 30px;
+}

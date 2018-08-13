@@ -1,0 +1,44 @@
+/* /* /* selector {
+        property: value;
+    } */
+    /* h1 {
+        color: red;
+    }
+    h2 {
+        color: blue;
+    }
+    #heading2 {
+        color: green;
+        font-family: 'Hanalei Fill', cursive;
+        font-size:40px;
+    }
+    .text-right {
+        text-align: right;
+    }
+
+    text-transform
+
+    front-weight */ 
+
+    /* .text-red{
+        color : red;
+    }
+
+    .text-upper{
+        text-transform: uppercase;
+    }
+    .font-weight{
+        font-weight: bold;
+    }
+    .font-paci {
+        font-family: 'Hanalei Fill', cursive;
+
+    } */ 
+
+    #background1 {
+        height: 500px;
+        width: 100%;
+            }
+    .d-inline-block{
+        display: inline-block;
+    }

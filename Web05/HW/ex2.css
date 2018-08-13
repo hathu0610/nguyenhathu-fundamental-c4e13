@@ -1,0 +1,137 @@
+
+/* width */
+.w-86{
+    width:86px;
+}
+/* id */
+#upper{
+    display: flex;
+}
+#left{
+    width: 100px;
+    height: 566px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+#left1{
+    height:64px;
+    background-color: lightcoral;
+
+}
+#bluebox1{
+    display: flex;
+    flex-direction: column;
+}
+#left2{
+    height:17px;
+    background-color: darkblue;
+}
+#left3{
+    height:10px;
+    background-color: lightblue;
+}
+
+#graybox{
+    display: flex;
+    flex-direction: column;
+}
+
+#left4{
+    height:133px;
+    background-color: lightgray;
+}
+#middle{
+    width: 495px;
+    height:566px;
+    display: flex;
+    flex-direction: column;
+}
+
+#greenbox{
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+    width: 480px;
+    height: 238px;
+    background-color: lightgreen;
+    margin:0.5px;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px 0px 37px 0px;
+}
+
+
+#whitebox{
+    width: 113px;
+    height:26px;
+    background-color: white;
+}
+
+#blackbox{
+    width:208px;
+    height:22px;
+    background-color: black;
+
+}
+
+#greenbox-4{
+    width:119px;
+    height:45px;
+    background-color: darkgreen;
+    margin:0.5px;
+}
+
+#blue-red{
+    margin: 18px 0.5px;
+}
+
+#bluebox2{
+    width: 284px;
+    height:30px;
+    background-color: lightblue;
+}
+
+#redbox{
+    width: 195px;
+    height:30px;
+    background-color: red;
+}
+
+#green-ora{
+    flex-direction: column;
+    margin: 0px 16px 0px 0px;
+}
+
+#lightgreenbox{
+    width:108px;
+    height:75px;
+    background-color: yellowgreen;
+    margin:0px 0px 5px 0px;
+}
+
+#orangebox{
+    width:108px;
+    height:134px;
+    background-color:orange;
+}
+
+#footer{
+    width: 580px;
+    height:49px;
+    background-color: lightgray;
+    margin: 19px 0px;
+}
+
+
+/* other */
+.d-inline-block{
+    display: inline-block;
+}
+.flex-display{
+    display:flex;
+}

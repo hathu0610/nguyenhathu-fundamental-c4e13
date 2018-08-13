@@ -1,0 +1,21 @@
+#flex-box{
+    background-color: gray;  
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 300px;
+    align-items: center;
+}
+
+.bg-green{
+    background-color: green;
+}
+.w-50px{
+    width: 50px;
+}
+.h-50px{
+    height: 50px;
+}
+.m-10{
+    margin: 10px;
+}

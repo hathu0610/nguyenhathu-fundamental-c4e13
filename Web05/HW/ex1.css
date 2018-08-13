@@ -1,0 +1,81 @@
+
+#background-1 {
+
+height: 300px;
+/* width:750px; */ 
+background-image: url(https://bit.ly/2MGcvhy);
+background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+
+
+}
+
+#text{
+
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    /* background-color: black; */
+}
+#flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-around;  
+    flex-wrap: wrap;
+    /* background-color: pink; */
+
+}
+
+.circle {
+    display: inline-block;
+    text-align: center;
+}
+.d-inline-block{
+    display: inline-block;
+}
+.caption{
+    display: block;
+    color:white;
+}
+.line{
+    border-bottom: 1px solid white;
+    padding: 10px;
+}
+#img1{
+    border-radius: 75px;
+    width: 125px;
+    height: 125px;
+    background-image: url(https://scontent.fhan3-2.fna.fbcdn.net/v/t1.0-9/34837294_1783082088473289_490901267145555968_n.jpg?_nc_cat=0&oh=c0d149d604c9484f8af5ca315cc2dd4d&oe=5C030D18);
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+#img2{
+    border-radius: 75px;
+    width: 125px;
+    height: 125px;
+    background-image: url(https://bit.ly/2nvqImu);
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+#img3{
+    border-radius: 75px;
+    width: 125px;
+    height: 125px;
+    background-image: url(https://bit.ly/2nu66en);
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
+#img4{
+    border-radius: 75px;
+    width: 125px;
+    height: 125px;
+    background-image: url(https://bit.ly/2OsUXFP);
+    background-repeat: no-repeat;
+    background-size: contain;    
+}
