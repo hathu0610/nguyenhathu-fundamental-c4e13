@@ -4,10 +4,18 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../static/cssfordetail.css">
 </head>
-<body>
-        <img src= {{service.image}} width="50%" height="50%"> 
+<body class="container">
+        <!-- <img src= {{service.image}} width="50%" height="50%"> 
         <br>
         <h1>{{service.name}}</h1>
         <p>Năm sinh: {{service.yob}}</p>
@@ -16,7 +24,29 @@
         <p>Địa chỉ: {{service.address}} </p>
         <p>Mô tả: {{service.description}} </p>
         <p>Số đo 3 vòng: {{service.measurements}} </p>
-        <a href="{{  url_for('servicerequest', service_id = service.id) }}" >Yêu cầu dịch vụ</a>
+        <a href="{{  url_for('servicerequest', service_id = service.id) }}" >Yêu cầu dịch vụ</a> -->
+
+        <div class="bg-pink font-italic text-black-50 d-flex justify-content-center align-items-center " style="height:100px">
+                <h1 class="font-weight-light">dịch vụ mùa đông </h1> 
+            </div>
+        <img src={{service.image}} class="img-thumbnail rounded mx-auto d-block" style="width: 200px; height: 200px;" >
+        
+
+         <div class=" d-flex flex-column justify-content-center justify-content-center align-items-center" style="height:300px;">
+                <h1 class="text-center text-pink border-bottom font-josefin "> {{service.name}}</h1>
+                <div class="col-md-7 justify-content-center mt-3 font-cabin" style="height:100px;">
+                       <p><span class="text-pink">Năm sinh:</span> <span> {{service.yob}} </span></p> 
+                       <p><span class="text-pink">Chiều cao:</span> <span>{{service.height}} </span> </p> 
+                       <p> <span class="text-pink">SDT:</span> <span>{{service.phone}}</span></p> 
+                       <p> <span class="text-pink">Địa chỉ:</span> <span>{{service.address}}</span></p> 
+                       <p><span class="text-pink">Mô tả:</span> <span> {{service.description}}</span></p>
+                        <p><span class="text-pink">Số đo 3 vòng:</span> <span>  {{service.measurements}}</span></p>
+                        <p><a href="{{ url_for('servicerequest', service_id = service.id)}}" class="btn btn-primary text-pink " role="button">Request</i></a></p>
+
+                    </div>
+        </div>
+
+ 
 
 </body>
 </html>

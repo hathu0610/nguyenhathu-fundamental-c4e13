@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mua dong khong lanh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- font awsome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+<!--  -->
+<link rel="stylesheet" href="../static/cssforsearch.css">
 </head>
-<body>
-    <a href="{{ url_for('logout') }}">Dang xuat</a>
+<body class="container">
+    <!-- <a href="{{ url_for('logout') }}">Dang xuat</a>
     {% for service in all_service %}
     <div>
-        <!-- {% if service.gender == 1 %}
-        <img src="../static/image/male-profile.jpg"> 
-        {% elif service.gender == 0%}
-        <img src="../static/image/female-profile.jpg"> 
-        {% endif %} -->
-        <!-- <br> -->
         <img src= "http://via.placeholder.com/300x200"> 
         <br>
         <h1>{{service.name}}</h1>
@@ -27,6 +30,70 @@
 
         <hr>
     </div>
-    {% endfor %}
+    {% endfor %} -->
+
+    <!-- {% include 'search/search.html' %} -->
+    <div class="bg-pink font-italic text-black-50 d-flex justify-content-center align-items-center " style="height:100px">
+        <h1 class="font-weight-light">dịch vụ mùa đông </h1> 
+    </div>
+    <div class="d-flex">
+    <div class=" col-md-4 mt-3 " style="height:284px;">
+            <div class="bg-pink col-md-5 m-3 d-flex align-items-center justify-content-center " style="height:41px;">
+                <a class="text-pink font-weight-bold" href="{{ url_for('logout') }}"> Log out </a> 
+            </div>
+            <div class="bg-pink col-md-5 m-3 " style="height:41px;">
+                    <div class="bg-pink col-md-5 m-3 d-flex align-items-center justify-content-center " style="height:41px;">
+                            <div class="text-pink font-weight-bold"> <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle text-pink font-weight-bold text-center ml-4 " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Menu
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="{{ url_for('signin') }}">Sign in</a>
+                                      <a class="dropdown-item" href="{{url_for('create')}}">Tự rao bán</a>
+                                      <a class="dropdown-item" href="{{url_for('index')}}">Quay lại trang chủ</a>
+                                    </div>
+                                  </div> </div> 
+                        </div>
+            </div>
+    </div>
+    <div class="col-md-8 ml-3 justify-content-center mt-3 " style="height:900px;">
+            <h5 class=" text-pink text-center font-weight-bold  border-bottom">Tiêu chí tìm bạn? </h5>   
+            <div class="bg-white d-flex justify-content-center mt-4 justify-content-between flex-wrap font-cabin " style="height:100px">
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Xinh xắn</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Dễ thương</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Học giỏi</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mb-3 btn-block">Ăn nhiều</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Ngủ nhiều</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Vui vẻ</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mr-5 mb-3 btn-block">Cao ráo</button></p> 
+            <p><button type="button" class="btn btn-outline-danger mb-3 btn-block">Lùn lùn</button></p> 
+             </div>
+
+            <h5 class=" text-pink text-center font-weight-bold mt-5  border-bottom">List các bạn xinh </h5> 
+            
+            
+
+            <div class="row font-cabin">
+                    {% for service in all_service %}
+                    <div class="col-sm-6 col-md-4">
+                      <div class="thumbnail">
+                        <img src= "http://via.placeholder.com/192x200"> 
+                        <div class="caption mt-3">
+                            <h4> {{service.name}}</h4>
+                          <p> Năm sinh: {{service.yob}}</p>
+                          <p> Chiều cao {{service.height}}</p></p>
+                          <p><a href="{{  url_for('detail', service_id = service.id)}}" class="btn btn-primary text-pink " role="button">Chi tiết <i class="fas fa-heart"></i></a></p>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}  
+                </div>
+    </div>
+
+
+
+    </div>
+
+    
 </body>
 </html>

@@ -83,6 +83,7 @@
     height: 7px; */
     background-image: url("image/icons/icon-facebook.png");
     margin: 0px 5px 0px 0px;
+    filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
 }
 #text-box{
     height: 25px;

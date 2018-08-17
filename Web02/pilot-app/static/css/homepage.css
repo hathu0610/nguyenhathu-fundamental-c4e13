@@ -1,0 +1,26 @@
+.carousel-caption{
+    top: 10px;
+}
+.font-lobster{
+    font-family: 'Lobster', cursive;
+}
+.female-bg{
+    background-image: url('../image/female.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.male-bg{
+    background-image: url('../image/male.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.caption {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+}
+.thumbnail{
+    position:relative;
+
+}

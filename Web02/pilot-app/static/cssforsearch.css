@@ -1,0 +1,17 @@
+.bg-pink{
+    background-color: #FDF4F5;
+}
+.font-sourcesan{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.text-pink{
+    color: #FF7373;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #FDF4F5 !important;
+    border-color:#FDF4F5 !important;
+}
+.font-cabin{
+    font-family: 'Cabin', sans-serif;
+
+}

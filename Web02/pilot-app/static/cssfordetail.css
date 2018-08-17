@@ -1,0 +1,18 @@
+.bg-pink{
+    background-color: #FDF4F5;
+}
+
+.text-pink{
+    color: #FF7373;
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #FDF4F5 !important;
+    border-color:#FDF4F5 !important;
+}
+.font-josefin{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.font-cabin{
+    font-family: 'Cabin', sans-serif;
+
+}

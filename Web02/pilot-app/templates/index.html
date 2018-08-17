@@ -5,17 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    {% include 'meta-data.html' %}
+
 </head>
-<body>
-    <h1> mua dong khong lanh </h1>
-    <a href="{{url_for('anothersearch')}}"> Home page</a>
+<body class="container">
+    <!-- <h1> Mùa đông không lạnh  </h1> -->
+    <!-- <a href="{{url_for('anothersearch')}}"> Homepage</a>
     <hr>
-    <a href="{{url_for('search',g=0)}}"> ban la nam?</a>
+    <a href="{{url_for('search',g=0)}}"> bạn là nam?</a>
     <hr>
-    <a href="{{url_for('search', g=1)}}"> ban la nu? </a>
-    <hr>
-    <a href="{{url_for('customernotcontact')}}"> 10 khach hang nam chua lien lac </a>
+    <a href="{{url_for('search', g=1)}}"> bạn là nữ? </a>
+    <hr> -->
+    <!-- <a href="{{url_for('customernotcontact')}}"> 10 khach hang nam chua lien lac </a> -->
+
+    {% include 'homepage/navigation.html' %}
+    {% include 'homepage/carousel.html' %}
+    {% include 'homepage/caption.html' %}
+
+
+    </div>
 </body>
 </html>
